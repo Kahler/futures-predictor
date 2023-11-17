@@ -26,7 +26,15 @@ const MapComponent = () => {
     };
   }, []);
 
-  return <div id="map" />;
+  return (
+    <div
+      id="map"
+      style={{
+        height: '100vh', // Full viewport height
+        width: '100vw', // Full viewport width
+      }}
+    />
+  );
 };
 
 export default MapComponent;
