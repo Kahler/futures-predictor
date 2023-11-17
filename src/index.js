@@ -21,11 +21,12 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <RouterProvider router={router} />
+
     <nav class="navigation">
       <FButton reference={`/`}>Graph</FButton>
       <FButton reference={`/futures`}>Futures Map</FButton>
     </nav>
-    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

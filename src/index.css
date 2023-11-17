@@ -2,7 +2,7 @@
   --primary-color: #0555c5;
   --primary-hover-color: #0666d6;
   --secondary-color: #ff9800;
-  --background-color: #282c34;
+  --background-color: #090909;
   --font-family: 'Arial', sans-serif;
   --base-font-size: 16px;
 }
@@ -26,7 +26,11 @@ nav {
 }
 
 .navigation {
-  background: blue;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 100;
+  background: var(--background-color);
   height: 40px;
   display: flex;
   gap: 10px;
