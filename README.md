@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Futures predictor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a futures predictor together with a visal page for easy viewing.
 
 ## Available Scripts
 
