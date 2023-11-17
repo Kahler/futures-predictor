@@ -1,6 +1,6 @@
 :root {
   --primary-color: #0555c5;
-  --primary-color: #0666d6;
+  --primary-hover-color: #0666d6;
   --secondary-color: #ff9800;
   --background-color: #282c34;
   --font-family: 'Arial', sans-serif;
@@ -28,4 +28,7 @@ nav {
 .navigation {
   background: blue;
   height: 40px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
 }

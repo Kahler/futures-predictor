@@ -24,8 +24,6 @@ root.render(
     <nav class="navigation">
       <FButton reference={`/`}>Graph</FButton>
       <FButton reference={`/futures`}>Futures Map</FButton>
-      {/* <a href={`/`}>Your Name</a>
-      <a href={`/futures`}>Your Friend</a> */}
     </nav>
     <RouterProvider router={router} />
   </React.StrictMode>
