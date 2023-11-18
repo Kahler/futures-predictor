@@ -39,7 +39,7 @@ const StyledLineChart = () => {
     ],
     datasets: [
       {
-        label: 'Stock A',
+        label: 'Orange juice',
         data: [140, 137, 141, 138, 137, 140, 142, 141, 144, 143, 145, 146, 148],
         fill: true,
         backgroundColor: 'transparent', // Gradient will be added in the useEffect

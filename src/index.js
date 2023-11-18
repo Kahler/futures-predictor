@@ -5,15 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Futures from './routes/Futures';
-import { FButton } from './components/FButton';
 
 const router = createBrowserRouter([
-  // {
-  //   path: '/',
-  //   element: <App />,
-  // },
   {
     path: '/',
+    element: <App />,
+  },
+  {
+    path: '/futures',
     element: <Futures />,
   },
 ]);
@@ -22,11 +21,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-
-    {/* <nav className="navigation"> */}
-    {/* <FButton reference={`/`}>Graph</FButton> */}
-    {/* <FButton reference={`/`}>Futures Map</FButton> */}
-    {/* </nav> */}
   </React.StrictMode>
 );
 
