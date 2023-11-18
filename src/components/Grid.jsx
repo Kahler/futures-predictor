@@ -7,59 +7,67 @@ export const Grid = () => {
     {
       name: 'Wheat Futures ',
       date: 'Dec 2023',
-      divergence: '+2.5%',
+      divergence: 2.5,
     },
     {
       name: 'Corn Futures ',
       date: 'Mar 2024',
-      divergence: '-1.0%',
-    },
-    {
-      name: 'Soybean Futures ',
-      date: 'May 2024',
-      divergence: '+3.75%',
-    },
-    {
-      name: 'Cotton Futures ',
-      date: 'Jul 2024',
-      divergence: '-0.5%',
-    },
-    {
-      name: 'Coffee Futures ',
-      date: 'Sep 2024',
-      divergence: '+1.25%',
-    },
-    {
-      name: 'Sugar Futures ',
-      date: 'Oct 2024',
-      divergence: '+0.8%',
+      divergence: -1.0,
     },
     {
       name: 'Orange Juice Futures ',
       date: 'Nov 2024',
-      divergence: '-2.2%',
+      divergence: 11.7,
+    },
+    {
+      name: 'Soybean Futures ',
+      date: 'May 2024',
+      divergence: 3.75,
+    },
+    {
+      name: 'Cotton Futures ',
+      date: 'Jul 2024',
+      divergence: -0.5,
+    },
+    {
+      name: 'Coffee Futures ',
+      date: 'Sep 2024',
+      divergence: 1.25,
+    },
+    {
+      name: 'Sugar Futures ',
+      date: 'Oct 2024',
+      divergence: -0.8,
     },
     {
       name: 'Rice Futures',
       date: 'Jan 2025',
-      divergence: '+1.0%',
+      divergence: 1.0,
     },
     {
       name: 'Cocoa Futures',
       date: ' Mar 2025',
-      divergence: '+2.0%',
+      divergence: 2.0,
     },
   ];
 
   return (
-    <div className="grid-container">
+    <a href="/futures" className="grid-container">
       {futures.map((fut) => (
         <Card>
-          <h3 className="fut-header">{fut.name}</h3>
-          <div className="fut-divergence">{fut.divergence}</div>
-          <div className="fut-date">{fut.date}</div>
+          <h3
+            style={fut.divergence > 0 ? { color: 'green' } : { color: 'red' }}
+            className="fut-header">
+            {fut.name}
+          </h3>
+          <div
+            style={fut.divergence > 0 ? { color: 'green' } : { color: 'red' }}
+            className="fut-divergence">
+            {fut.divergence}
+          </div>
+          <div className="fut-date">{fut.date}%</div>
         </Card>
       ))}
-    </div>
+    </a>
   );
 };
