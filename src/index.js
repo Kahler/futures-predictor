@@ -8,12 +8,12 @@ import Futures from './routes/Futures';
 import { FButton } from './components/FButton';
 
 const router = createBrowserRouter([
+  // {
+  //   path: '/',
+  //   element: <App />,
+  // },
   {
     path: '/',
-    element: <App />,
-  },
-  {
-    path: '/futures',
     element: <Futures />,
   },
 ]);
@@ -23,10 +23,10 @@ root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
 
-    <nav className="navigation">
-      <FButton reference={`/`}>Graph</FButton>
-      <FButton reference={`/futures`}>Futures Map</FButton>
-    </nav>
+    {/* <nav className="navigation"> */}
+    {/* <FButton reference={`/`}>Graph</FButton> */}
+    {/* <FButton reference={`/`}>Futures Map</FButton> */}
+    {/* </nav> */}
   </React.StrictMode>
 );
 
