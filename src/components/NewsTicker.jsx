@@ -80,18 +80,23 @@ export const NewsTicker = (props) => {
     <>
       {orangeData
         .slice(0, news)
-        .map((o) => (
-          <Card key={o.header}>
-            <h3 className="info-header">{o.header}</h3>
-            <div className="info-body">{o.body}</div>
-            <Tags className="info-tags" tags={o.tags} />
-            <div className="info-author">{o.author}</div>
-            <div
-              style={{ opacity: o.credibility * 0.1 }}
-              className="info-credibility">
-              {o.credibility}
-            </div>
-          </Card>
+        .map((o, index) => (
+          <div
+            key={o.header}
+            className="card-entrance"
+            style={{ animationDelay: `${index * 100}ms` }}>
+            <Card>
+              <h3 className="info-header">{o.header}</h3>
+              <div className="info-body">{o.body}</div>
+              <Tags className="info-tags" tags={o.tags} />
+              <div className="info-author">{o.author}</div>
+              <div
+                style={{ opacity: o.credibility * 0.1 }}
+                className="info-credibility">
+                {o.credibility}
+              </div>
+            </Card>
+          </div>
         ))
         .reverse()}
     </>

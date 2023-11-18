@@ -5,6 +5,18 @@ import './StyledLineChart.css';
 
 const StyledLineChart = () => {
   const chartRef = useRef(null);
+  const [delta, setDelta] = React.useState(2);
+
+  React.useEffect(() => {
+    document
+      ?.getElementById('fileInput')
+      ?.addEventListener('change', function (event) {
+        console.log('updated doc');
+        setDelta((prev) => (prev = prev + 1));
+        // var fileName = event.target.files[0].name;
+        // document.getElementById('fileInputLabel').textContent = 'File: ' + fileName;
+      });
+  });
 
   useEffect(() => {
     const chart = chartRef.current;
@@ -64,7 +76,21 @@ const StyledLineChart = () => {
       },
       {
         label: 'Private predicted',
-        data: [140, 137, 142, 139, 139, 142, 145, 146, 150, 149, 151, 152, 155],
+        data: [
+          140,
+          137,
+          142,
+          139,
+          139,
+          142,
+          145,
+          146,
+          150,
+          149 + delta / 2,
+          151 + delta,
+          151 + delta * 2,
+          154 + delta * 2,
+        ],
         fill: true,
         backgroundColor: 'transparent', // Gradient will be added in the useEffect
         borderColor: 'rgba(233, 127, 49, 1)',

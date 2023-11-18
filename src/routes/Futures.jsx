@@ -16,6 +16,16 @@ export default function Futures() {
           labels={['Oranges', 'Wheat', 'Oat', 'Soybeans', 'Cocoa']}
         />
         <StyledLineChart />
+        <div className="date-selector">
+          <div className="fade">1D</div>
+          <div className="fade">1W</div>
+          <div className="fade">1M</div>
+          <div className="fade">6M</div>
+          <div className="fade">1Y</div>
+          <div className="fade">5Y</div>
+          <div className="fade">10Y</div>
+          <div className="fade">All</div>
+        </div>
 
         <NewsTicker />
       </div>

@@ -27,3 +27,14 @@
   padding-bottom: 5px;
   cursor: pointer;
 }
+
+.date-selector {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.fade {
+  opacity: 0.5;
+  color: #cccccc;
+}
