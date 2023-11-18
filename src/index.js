@@ -23,7 +23,7 @@ root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
 
-    <nav class="navigation">
+    <nav className="navigation">
       <FButton reference={`/`}>Graph</FButton>
       <FButton reference={`/futures`}>Futures Map</FButton>
     </nav>
