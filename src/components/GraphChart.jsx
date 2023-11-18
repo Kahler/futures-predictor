@@ -31,8 +31,9 @@ const GraphChart = () => {
   };
 
   const options = {
+    indexAxis: 'y', // This will make the chart horizontal
     scales: {
-      y: {
+      x: {
         beginAtZero: true,
       },
     },

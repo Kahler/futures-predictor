@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import GraphChart from './components/GraphChart';
+import LineChart from './components/LineChart';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <GraphChart />
+        <LineChart />
       </header>
     </div>
   );

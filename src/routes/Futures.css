@@ -1,0 +1,10 @@
+.sidebar {
+  background-color: #333333;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  bottom: 40px;
+  width: 40vw;
+  z-index: 2;
+  border-radius: 10px;
+}
