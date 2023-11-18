@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import LineChart from './components/LineChart';
 
 function App() {
+
+  const [stockMarket, setStockMarket] = useState(null);
+
+  useEffect(() => {
+    fetch("https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=dc376cb55d5e600338867ca3e24b3728")
+      .then(res => {
+        if (res.ok) {
+          res.json().then(data => {
+            setStockMarket(data);
+            console.log(data);
+          }).catch(r => console.log(r));
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .catch(err => console.log(err));
+  }, [])
+
+
   return (
     <div className="App">
       <header className="App-header">
