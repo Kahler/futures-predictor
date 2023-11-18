@@ -52,7 +52,7 @@ const StyledLineChart = () => {
       },
       {
         label: 'Predicted',
-        data: [140, 137, 141, 138, 138, 141, 143, 143, 146, 145, 147, 149, 151],
+        data: [140, 137, 141, 138, 138, 141, 142, 141, 142, 145, 147, 149, 151],
         fill: true,
         backgroundColor: 'transparent', // Gradient will be added in the useEffect
         borderColor: '#4bc04d',
