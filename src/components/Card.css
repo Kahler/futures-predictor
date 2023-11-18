@@ -1,0 +1,6 @@
+.info-card {
+  background: var(--card-background-color);
+  border-radius: var(--border-radius);
+  padding: 10px;
+  margin: 10px;
+}

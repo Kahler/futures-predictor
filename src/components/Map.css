@@ -2,3 +2,20 @@
   background-color: var(--background-color);
   z-index: 1;
 }
+
+.custom-marker .marker-animation {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  animation: fadeInAnimation 1s;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

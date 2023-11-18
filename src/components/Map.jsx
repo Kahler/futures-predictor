@@ -5,6 +5,52 @@ import './Map.css';
 const MapComponent = () => {
   const mapRef = useRef(null);
 
+  function getRandomCoordinatesForCountry(country) {
+    // Define bounding boxes for the USA and Germany
+    const boundingBoxes = {
+      USA: { lat: [24.396308, 49.384358], lng: [-125.0, -66.93457] },
+      Germany: { lat: [47.270111, 55.0815], lng: [5.866342, 15.041896] },
+      Africa: { lat: [-34.83333, 37.345], lng: [-17.625042, 51.407917] },
+      Asia: { lat: [60.269, 25.7558], lng: [25.2637, 100.3] },
+      Russia: { lat: [41.185, 81.858122], lng: [19.6389, 168.9979] },
+    };
+
+    let bounds = boundingBoxes[country];
+    let latRange = bounds.lat;
+    let lngRange = bounds.lng;
+
+    let randomLat = Math.random() * (latRange[1] - latRange[0]) + latRange[0];
+    let randomLng = Math.random() * (lngRange[1] - lngRange[0]) + lngRange[0];
+
+    return [randomLat, randomLng];
+  }
+
+  function createRandomMarkers(map, numberOfMarkers) {
+    createMarkers(100, 'USA');
+    createMarkers(20, 'Germany');
+    createMarkers(30, 'Africa');
+    createMarkers(75, 'Asia');
+    createMarkers(20, 'Russia');
+  }
+
+  const createMarkers = (markers, country) => {
+    const maxSize = 10;
+    const minSize = 3;
+
+    for (let i = 0; i < markers; i++) {
+      let coordinates = getRandomCoordinatesForCountry(country);
+      let size = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
+
+      L.marker(coordinates, {
+        icon: L.divIcon({
+          className: 'custom-marker',
+          html: `<div class="marker-animation" style="width: ${size}px; height: ${size}px;"></div>`,
+          iconSize: L.point(size, size),
+        }),
+      }).addTo(mapRef.current);
+    }
+  };
+
   useEffect(() => {
     mapRef.current = L.map('map').setView([0, 0], 2); // Global view
 
@@ -18,31 +64,8 @@ const MapComponent = () => {
 
     mapRef.current.zoomControl.remove();
 
-    // Define polygons for each region
-    const regions = {
-      saoPaulo: { coords: [[-20.0, -44.0], [-20.0, -53.0], [-25.0, -53.0], [-25.0, -44.0]], color: 'green' },
-      indianRiver: { coords: [[27.0, -80.0], [27.0, -80.7], [28.5, -80.7], [28.5, -80.0]], color: 'red' },
-      valencia: { coords: [[38.5, -0.5], [38.5, -1.5], [40.5, -1.5], [40.5, -0.5]], color: 'red' },
-      andalusia: { coords: [[36.0, -1.5], [36.0, -7.5], [38.5, -7.5], [38.5, -1.5]], color: 'red' },
-      centralValley: { coords: [[35.5, -118.5], [35.5, -122.0], [39.5, -122.0], [39.5, -118.5]], color: 'red' },
-      sicily: { coords: [[36.5, 12.5], [36.5, 15.5], [38.5, 15.5], [38.5, 12.5]], color: 'red' },
-      calabria: { coords: [[38.0, 15.5], [38.0, 17.5], [40.0, 17.5], [40.0, 15.5]], color: 'red' },
-      puglia: { coords: [[39.5, 15.0], [39.5, 18.5], [41.5, 18.5], [41.5, 15.0]], color: 'red' },
-      veracruz: { coords: [[17.5, -93.5], [17.5, -98.5], [22.5, -98.5], [22.5, -93.5]], color: 'red' },
-      michoacan: { coords: [[18.0, -100.5], [18.0, -104.0], [20.5, -104.0], [20.5, -100.5]], color: 'red' },
-      limpopo: { coords: [[-22.0, 27.5], [-22.0, 31.5], [-25.5, 31.5], [-25.5, 27.5]], color: 'red' },
-      mpumalanga: { coords: [[-24.0, 29.5], [-24.0, 32.0], [-27.0, 32.0], [-27.0, 29.5]], color: 'red' },
-      easternCape: { coords: [[-30.5, 22.5], [-30.5, 30.0], [-34.5, 30.0], [-34.5, 22.5]], color: 'red' },
-      tucuman: { coords: [[-26.0, -64.5], [-26.0, -66.5], [-28.0, -66.5], [-28.0, -64.5]], color: 'red' },
-      entreRios: { coords: [[-30.0, -57.5], [-30.0, -61.0], [-34.0, -61.0], [-34.0, -57.5]], color: 'red' },
-      nileDelta: { coords: [[30.0, 30.0], [30.0, 32.0], [31.5, 32.0], [31.5, 30.0]], color: 'red' },
-      nileValley: { coords: [[24.5, 30.5], [24.5, 33.0], [31.0, 33.0], [31.0, 30.5]], color: 'red' },
-    };
-
-       // Add each region as a polygon to the map
-   Object.entries(regions).forEach(([_, { coords, color }]) => {
-    L.polygon(coords, { color }).addTo(mapRef.current);
-  });
+    // Call this function after initializing your map
+    createRandomMarkers(mapRef.current, 100);
 
     // Cleanup on unmount
     return () => {

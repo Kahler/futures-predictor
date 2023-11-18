@@ -5,6 +5,7 @@ import GraphChart from '../components/GraphChart';
 import './Futures.css';
 import LineChart from '../components/LineChart';
 import StyledLineChart from '../components/StyledLineChart';
+import { Card } from '../components/Card';
 
 export default function Futures() {
   return (
@@ -21,6 +22,19 @@ export default function Futures() {
         /> */}
         <StyledLineChart />
         {/* <LineChart /> */}
+
+        <Card>
+          <h2>Tester</h2>
+          <div>tester</div>
+        </Card>
+        <Card>
+          <h2>Tester</h2>
+          <div>tester</div>
+        </Card>
+        <Card>
+          <h2>Tester</h2>
+          <div>tester</div>
+        </Card>
       </div>
     </div>
   );

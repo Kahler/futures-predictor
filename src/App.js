@@ -1,6 +1,5 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import GraphChart from './components/GraphChart';
 import LineChart from './components/LineChart';
 
 function App() {

@@ -88,7 +88,7 @@ const StyledLineChart = () => {
           drawBorder: false,
         },
         ticks: {
-          color: '#FFFFFF',
+          color: '#777777',
           font: {
             size: 10,
           },
@@ -100,7 +100,7 @@ const StyledLineChart = () => {
           borderDash: [5, 5],
         },
         ticks: {
-          color: '#FFFFFF',
+          color: '#777777',
           font: {
             size: 10,
           },
@@ -111,7 +111,7 @@ const StyledLineChart = () => {
   };
 
   return (
-    <div style={{ height: '300px' }}>
+    <div className="styled-line-chart__wrapper">
       <Line
         className="styled-line-chart"
         ref={chartRef}
