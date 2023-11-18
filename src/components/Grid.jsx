@@ -54,7 +54,7 @@ export const Grid = () => {
   return (
     <a href="/futures" className="grid-container">
       {futures.map((fut) => (
-        <Card>
+        <Card key={fut.name + fut.date}>
           <h3
             style={fut.divergence > 0 ? { color: 'green' } : { color: 'red' }}
             className="fut-header">

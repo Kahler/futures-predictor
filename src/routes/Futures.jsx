@@ -19,6 +19,15 @@ export default function Futures() {
 
         <NewsTicker />
       </div>
+      <input
+        type="file"
+        id="fileInput"
+        name="fileInput"
+        style={{ display: 'none' }}
+      />
+      <label htmlFor="fileInput" id="fileInputLabel" className="fab-button">
+        +
+      </label>
     </div>
   );
 }

@@ -45,7 +45,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Grid />
-        {/* <LineChart /> */}
       </header>
     </div>
   );

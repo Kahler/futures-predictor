@@ -4,6 +4,19 @@ import './NewsTicker.css';
 import { Tags } from './Tag';
 
 export const NewsTicker = (props) => {
+  const [news, setNews] = React.useState(3);
+
+  React.useEffect(() => {
+    document
+      ?.getElementById('fileInput')
+      ?.addEventListener('change', function (event) {
+        console.log('updated doc');
+        setNews((prev) => (prev = prev + 1));
+        // var fileName = event.target.files[0].name;
+        // document.getElementById('fileInputLabel').textContent = 'File: ' + fileName;
+      });
+  });
+
   const orangeData = [
     {
       header: 'New Orange Juice Processing Method Promises Higher Yields',
@@ -38,7 +51,7 @@ export const NewsTicker = (props) => {
       body: 'A new recycling process implemented by major orange juice producers has cut production costs by 20%, allowing for cheaper retail prices and more competitive market positioning.',
       tags: ['innovation', 'recycling', 'cost cutting'],
       author: 'Rachel Stevens',
-      credibility: 3,
+      credibility: 9,
     },
     {
       header: 'Health Study Reveals Benefits of Orange Juice for Heart Health',
@@ -65,19 +78,22 @@ export const NewsTicker = (props) => {
 
   return (
     <>
-      {orangeData.map((o) => (
-        <Card key={o.header}>
-          <h3 className="info-header">{o.header}</h3>
-          <div className="info-body">{o.body}</div>
-          <Tags className="info-tags" tags={o.tags} />
-          <div className="info-author">{o.author}</div>
-          <div
-            style={{ opacity: o.credibility * 0.1 }}
-            className="info-credibility">
-            {o.credibility}
-          </div>
-        </Card>
-      ))}
+      {orangeData
+        .slice(0, news)
+        .map((o) => (
+          <Card key={o.header}>
+            <h3 className="info-header">{o.header}</h3>
+            <div className="info-body">{o.body}</div>
+            <Tags className="info-tags" tags={o.tags} />
+            <div className="info-author">{o.author}</div>
+            <div
+              style={{ opacity: o.credibility * 0.1 }}
+              className="info-credibility">
+              {o.credibility}
+            </div>
+          </Card>
+        ))
+        .reverse()}
     </>
   );
 };

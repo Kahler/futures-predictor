@@ -23,19 +23,19 @@ const StyledLineChart = () => {
 
   const data = {
     labels: [
-      '12',
-      '2',
-      '4',
-      '6',
-      '8',
-      '10',
-      '12',
-      '2',
-      '4',
-      '6',
-      '8',
-      '10',
-      '12',
+      'Dec',
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
     ],
     datasets: [
       {
