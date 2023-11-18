@@ -52,7 +52,7 @@ const MapComponent = () => {
   };
 
   useEffect(() => {
-    mapRef.current = L.map('map').setView([0, 0], 2); // Global view
+    mapRef.current = L.map('map').setView([0, 0], 3); // Global view
 
     L.tileLayer(
       'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',

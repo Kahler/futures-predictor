@@ -8,8 +8,8 @@ const GraphChart = (props) => {
     datasets: [
       {
         data: props.data,
-        backgroundColor: ['rgba(54, 162, 235, 0.2)'],
-        borderColor: ['rgba(54, 162, 235, 1)'],
+        backgroundColor: ['rgba(233, 127, 49, 0.2)'],
+        borderColor: ['rgba(233, 127, 49, 1)'],
         borderWidth: 1,
       },
     ],
