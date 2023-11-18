@@ -13,10 +13,10 @@ const StyledLineChart = () => {
       // Create a gradient for the line fill
       const ctx = chart.ctx;
       const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-      gradient.addColorStop(0, 'rgba(54, 154, 63, 0.2)');
-      gradient.addColorStop(1, 'rgba(54, 154, 63, 0)');
+      gradient.addColorStop(0, 'rgba(233, 127, 49, 0.2)');
+      gradient.addColorStop(1, 'rgba(233, 127, 49, 0)');
 
-      chart.data.datasets[1].backgroundColor = gradient;
+      chart.data.datasets[2].backgroundColor = gradient;
       chart.update();
     }
   }, []);
@@ -52,13 +52,25 @@ const StyledLineChart = () => {
       },
       {
         label: 'Predicted',
+        data: [140, 137, 141, 138, 138, 141, 143, 143, 146, 145, 147, 149, 151],
+        fill: true,
+        backgroundColor: 'transparent', // Gradient will be added in the useEffect
+        borderColor: '#4bc04d',
+        pointBackgroundColor: '#FFFFFF',
+        pointBorderColor: '#4bc04d',
+        pointHoverBackgroundColor: '#4bc04d',
+        pointHoverBorderColor: '#FFFFFF',
+        tension: 0.2,
+      },
+      {
+        label: 'Private predicted',
         data: [140, 137, 142, 139, 139, 142, 145, 146, 150, 149, 151, 152, 155],
         fill: true,
         backgroundColor: 'transparent', // Gradient will be added in the useEffect
-        borderColor: '#1f8522',
+        borderColor: 'rgba(233, 127, 49, 1)',
         pointBackgroundColor: '#FFFFFF',
-        pointBorderColor: '#154e1f',
-        pointHoverBackgroundColor: '#4bc053',
+        pointBorderColor: 'rgba(233, 127, 49, 1)',
+        pointHoverBackgroundColor: 'rgba(233, 127, 49, 1)',
         pointHoverBorderColor: '#FFFFFF',
         tension: 0.2,
       },
@@ -96,7 +108,6 @@ const StyledLineChart = () => {
       },
       y: {
         grid: {
-          color: 'rgba(255, 255, 255, 0.2)',
           borderDash: [5, 5],
         },
         ticks: {

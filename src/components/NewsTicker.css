@@ -1,0 +1,27 @@
+.info-header {
+  margin-top: 0;
+  margin-right: 40px;
+}
+.info-body {
+}
+.info-tags {
+}
+.info-author {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #555555;
+}
+.info-credibility {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

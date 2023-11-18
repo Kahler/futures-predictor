@@ -1,0 +1,13 @@
+.tags-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.news-tag {
+  border-radius: var(--border-radius);
+  background-color: grey;
+  padding: 2px 10px;
+}
